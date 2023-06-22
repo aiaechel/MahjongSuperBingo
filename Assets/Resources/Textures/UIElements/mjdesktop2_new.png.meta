@@ -102,7 +102,7 @@ TextureImporter:
       213: -1820247456746149661
     second: gang_button
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -119,9 +119,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -130,12 +133,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -153,11 +156,17 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -167,8 +176,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -178,8 +189,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -189,7 +202,22 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -896,9 +924,42 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      bei: -6126681513194582501
+      bei_button: -7990482432349812427
+      chi: -8133163456275116159
+      chi_button: 8722219302517837727
+      gang: 6746343504555636773
+      gang_button: -1820247456746149661
+      liuju_button: 6775467933657845843
+      mjdesktop2_new_0: 611514720236967779
+      mjdesktop2_new_1: 6930342760594454743
+      mjdesktop2_new_10: 2939222194193728072
+      mjdesktop2_new_11: -6964259855991239524
+      mjdesktop2_new_13: -552674773368415601
+      mjdesktop2_new_14: 7256552543701599098
+      mjdesktop2_new_15: 6508053540280309025
+      mjdesktop2_new_16: 7164913267531977544
+      mjdesktop2_new_18: 3434556996383825440
+      mjdesktop2_new_19: 9205343991819230288
+      mjdesktop2_new_2: 5819754047073306931
+      mjdesktop2_new_23: -422121144695474239
+      mjdesktop2_new_24: 6381132232708475025
+      mjdesktop2_new_4: -7844042202789518584
+      mjdesktop2_new_5: 5669143866194435610
+      mjdesktop2_new_6: 1726894435520374420
+      mjdesktop2_new_7: -6535367353432529763
+      mjdesktop2_new_8: 4160889586296774985
+      mjdesktop2_new_9: 4461785314135352374
+      peng: 6434732827307930907
+      pong_button: -5840287489650445411
+      richi: -1524977281365176757
+      richi_button: -7145848617347525734
+      rong_button: 6506125870868344022
+      skip_button: 1805882092966038686
+      tsumo_button: -1013774152349814633
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

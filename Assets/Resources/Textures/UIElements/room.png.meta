@@ -303,7 +303,7 @@ TextureImporter:
       213: -8642217162901440592
     second: room_99
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -320,9 +320,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -331,12 +334,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -354,11 +357,17 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -368,8 +377,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -379,8 +390,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -390,7 +403,22 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2504,9 +2532,109 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      room_0: 8223760342256937110
+      room_1: 5845250535511975192
+      room_10: 5998742668355188097
+      room_11: -7659227645673764327
+      room_12: -4224920953103130491
+      room_13: 8783437273911562944
+      room_14: -6231915851617436464
+      room_15: 2919079192893519393
+      room_16: 2629086226250093904
+      room_17: 4231325850976413038
+      room_18: -5205047848486145796
+      room_19: -8321164595380838704
+      room_2: 1405465485789638114
+      room_20: 9149318304533862939
+      room_21: 3083761720290816317
+      room_22: -6438712317853976688
+      room_23: -3441961928835439245
+      room_24: -6727078622315643150
+      room_25: -8271807491486587045
+      room_26: 1983602112317563349
+      room_27: -3348556657965423208
+      room_28: 7846945374502532055
+      room_29: -3838051269558636105
+      room_3: 5654006720289389903
+      room_30: 6834850441999357927
+      room_31: 7422769214397935272
+      room_32: 2479226353370421320
+      room_33: -1722209310733222292
+      room_34: -8229918715813176913
+      room_35: -3849032319212983155
+      room_36: 1263701823316623230
+      room_37: 3432068672919252159
+      room_38: 8077008324409136708
+      room_39: 1914617381846552811
+      room_4: -7046822124877184851
+      room_40: 5739992875742645702
+      room_41: -3037409277691474565
+      room_42: 9221485580758090099
+      room_43: 3518493797123897563
+      room_44: 6923630783852361132
+      room_45: -8126534607579858827
+      room_46: 1689301691585651004
+      room_47: 4199935464116420822
+      room_48: 8325194426779922380
+      room_49: -8930867038965284369
+      room_5: -8880918490468353959
+      room_50: -5825157178317392562
+      room_51: -7972293890302605689
+      room_52: -6031126092529182862
+      room_53: -4758054411110911733
+      room_54: -7201845672024952208
+      room_55: -2470474828054410101
+      room_56: -3305503595839328199
+      room_57: 5090695239165139352
+      room_58: -1595767623440293328
+      room_59: 9163294185311739421
+      room_6: 8483688791775144328
+      room_60: 487790863692449148
+      room_61: 3123636041981969553
+      room_62: 7248739855798777108
+      room_63: 6571430017505470492
+      room_64: -3471698393133876648
+      room_65: 6411375551102451711
+      room_66: -6469933568463124878
+      room_67: -7939392651210729197
+      room_68: -3392575200692620035
+      room_69: 2981712014297329415
+      room_7: -6168251382912983505
+      room_70: 4511177462052746474
+      room_71: -6097718512152443938
+      room_72: 3674727872286048183
+      room_73: 5578757489111417969
+      room_74: -6799866156522838786
+      room_75: 5273198448632325513
+      room_76: 4639274710232619071
+      room_77: 2645195534403709784
+      room_78: 8101767940244398741
+      room_79: 6995244147038709496
+      room_8: -7615754678155447774
+      room_80: -1950040038711239043
+      room_81: 7631907228481737923
+      room_82: 559937397252456835
+      room_83: 5786506265312500443
+      room_84: 940604123059852201
+      room_85: 1882184449982849901
+      room_86: -3043362590787438712
+      room_87: 112998569447248697
+      room_88: 7510694305534877095
+      room_89: 3972635401337281655
+      room_90: -1846551676849374294
+      room_91: 295661538943795968
+      room_92: 6038893239546897093
+      room_93: -276466993239030842
+      room_94: -5032948597248704300
+      room_95: 7701745984577285622
+      room_96: -1670801163711233626
+      room_97: -1624279122723350615
+      room_98: 4719660023457266353
+      room_99: -8642217162901440592
+      room_master: 1220376913556758033
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -450,7 +450,7 @@ TextureImporter:
       213: 21300296
     second: time0
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -467,9 +467,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -478,12 +481,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -501,11 +504,17 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -515,8 +524,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -526,8 +537,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -537,7 +550,22 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -2609,9 +2637,107 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      4kongs: 21300016
+      4richi: 21300000
+      4winds: 21300154
+      back_button: 21300106
+      base0: 21300050
+      base1: 21300034
+      base2: 21300052
+      base3: 21300090
+      base4: 21300130
+      base5: 21300132
+      base6: 21300074
+      base7: 21300076
+      base8: 21300078
+      base9: 21300080
+      bonus0: 21300104
+      bonus1: 21300082
+      bonus2: 21300084
+      bonus3: 21300178
+      bonus4: 21300168
+      bonus5: 21300042
+      bonus6: 21300238
+      bonus7: 21300102
+      bonus8: 21300170
+      bonus9: 21300166
+      confirmButton: 21300188
+      dora: 21300284
+      fan: 21300134
+      fan0: 21300020
+      fan1: 21300184
+      fan2: 21300094
+      fan3: 21300058
+      fan4: 21300114
+      fan5: 21300120
+      fan6: 21300126
+      fan7: 21300110
+      fan8: 21300118
+      fan9: 21300138
+      fu: 21300128
+      fu0: 21300198
+      fu1: 21300174
+      fu2: 21300144
+      fu3: 21300036
+      fu4: 21300116
+      fu5: 21300008
+      fu6: 21300046
+      fu7: 21300112
+      fu8: 21300182
+      fu9: 21300044
+      minus: 21300086
+      mjdesktop3_100: 21300018
+      mjdesktop3_12: 21300024
+      mjdesktop3_13: 21300026
+      mjdesktop3_2: 21300004
+      mjdesktop3_30: 21300060
+      mjdesktop3_31: 21300062
+      mjdesktop3_4: 21300288
+      mjdesktop3_44: 21300088
+      mjdesktop3_46: 21300092
+      mjdesktop3_49: 21300098
+      mjdesktop3_5: 21300290
+      mjdesktop3_50: 21300100
+      mjdesktop3_59: 21300242
+      mjdesktop3_6: 21300292
+      mjdesktop3_61: 21300122
+      mjdesktop3_68: 21300136
+      mjdesktop3_7: 21300014
+      mjdesktop3_70: 21300140
+      mjdesktop3_71: 21300142
+      mjdesktop3_8: 21300294
+      mjdesktop3_90: 21300180
+      no-yaku: 21300172
+      no1: 21300218
+      no2: 21300220
+      no3: 21300282
+      no4: 21300234
+      place1: 21300176
+      place2: 21300150
+      place3: 21300148
+      place4: 21300146
+      placeBack: 21300030
+      plus: 21300056
+      point: 21300032
+      ready_icon: 21300162
+      rong: 21300048
+      time0: 21300296
+      time1: 21300040
+      time2: 21300038
+      time3: 21300160
+      time4: 21300054
+      time5: 21300028
+      time6: 21300068
+      time7: 21300096
+      time8: 21300066
+      time9: 21300286
+      tsumo: 21300012
+      uradora: 21300064
+      waiting_panel: 21300002
+      yakuman: 21300010
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

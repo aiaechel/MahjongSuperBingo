@@ -138,7 +138,7 @@ TextureImporter:
       213: -5001337048715782563
     second: bothui_44
   externalObjects: {}
-  serializedVersion: 10
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -155,9 +155,12 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
+    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -166,12 +169,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
-    aniso: -1
-    mipBias: -100
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
-    wrapW: -1
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -189,11 +192,17 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 1
+  swizzle: 50462976
+  cookieLightType: 1
   platformSettings:
-  - serializedVersion: 2
+  - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -203,8 +212,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -214,8 +225,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -225,7 +238,22 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 1
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1184,9 +1212,54 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-  spritePackingTag: 
+    nameFileIdTable:
+      bothui_0: -501653793428538880
+      bothui_1: -6855359553601651590
+      bothui_10: 6392683407273883580
+      bothui_12: 373778948993062064
+      bothui_13: -4046966967924858551
+      bothui_14: 1356131702009759937
+      bothui_15: 1259430186602077114
+      bothui_16: -758284619294186486
+      bothui_17: 5591422899628379614
+      bothui_18: -7836228036166755262
+      bothui_19: -3026597579598333968
+      bothui_2: -4702351510489211395
+      bothui_20: 2891979031544759437
+      bothui_21: -5955113024907618367
+      bothui_22: -7332657521861503199
+      bothui_23: -7273338479442353073
+      bothui_24: -7461959266159064918
+      bothui_25: -8461325227477356942
+      bothui_26: -2331574930543174778
+      bothui_27: 423381174495691151
+      bothui_28: -9082859246200893816
+      bothui_29: -3919182054145294503
+      bothui_3: -6223215552839740855
+      bothui_30: 2954832607899711701
+      bothui_31: 1728424854892971691
+      bothui_32: -7826058728298773823
+      bothui_33: 4528745595599860190
+      bothui_34: -2752882233689031755
+      bothui_35: -823154724519851770
+      bothui_36: -4312004894201777241
+      bothui_37: -4478863676299680125
+      bothui_38: 889773771719292220
+      bothui_39: -1675664644504285284
+      bothui_4: 6252113988513057364
+      bothui_40: 9049753849477626115
+      bothui_41: -7039004345698396217
+      bothui_42: -7356713677762657827
+      bothui_43: 3843454371336105815
+      bothui_44: -5001337048715782563
+      bothui_5: -3657403364458141359
+      bothui_6: -8885259293608508375
+      bothui_7: -5155770622333536443
+      bothui_8: 7939125151638748554
+      bothui_9: 6866485621425271370
+      little_panel: -1846919781250224203
+  mipmapLimitGroupName: 
   pSDRemoveMatte: 0
-  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
