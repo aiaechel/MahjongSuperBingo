@@ -9,7 +9,7 @@ namespace Mahjong.Model
     public class GameSetting
     {
         // Basic settings
-        public GameMode GameMode;
+        public GameMode GameMode; // Should be renamed for normal vs aotenjuu
         public GamePlayers GamePlayers;
         public RoundCount RoundCount;
         public MinimumFanConstraintType MinimumFanConstraintType;
@@ -84,6 +84,29 @@ namespace Mahjong.Model
         public int 国士无双十三面 => YakumanLevelToInt(GuoShi);
         public int 纯正九连宝灯 => YakumanLevelToInt(JiuLian);
         public int 纯绿一色 => YakumanLevelToInt(LvYiSe);
+
+        /*
+         * Super Bingo settings that could be split out into separate settings
+         * - Point calculation - no fu, no tsumo loss
+         * - Draw until x tiles left
+         * - Special Tiles
+         *   - Flowers
+         *   - Gold 5s
+         *   - Rainbow 7s
+         *   - Shiro Pocchi
+         * - Open Riichi
+         * - Open Riichi cost for normal and chase
+         * - Chiitoi with multiple of the same pair
+         * - Chinitsu Chiitou = Yakuman
+         * - Renhou
+         * - Nanashi Musou
+         * - Discard 7s Bingo
+         * - Shugi
+         * - Tulip Game
+         * - Grand Cross
+         * - Seven Rush
+         */
+        public bool SuperBingo = false;
 
         private static int YakumanLevelToInt(YakumanLevel level)
         {
