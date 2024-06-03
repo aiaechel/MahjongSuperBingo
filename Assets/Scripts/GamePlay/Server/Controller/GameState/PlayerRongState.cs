@@ -50,7 +50,8 @@ namespace GamePlay.Server.Controller.GameState
                 UraDora = info.UraDora,
                 RedDora = info.RedDora,
                 BeiDora = info.BeiDora,
-                IsQTJ = info.IsQTJ
+                IsQTJ = info.IsQTJ,
+                IsSuperBingo = info.IsSuperBingo
             }).ToArray();
             Debug.Log($"The following players are claiming rong: {string.Join(",", RongPlayerIndices)}, "
                 + $"PlayerNames: {string.Join(",", playerNames)}");

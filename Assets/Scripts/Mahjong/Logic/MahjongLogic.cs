@@ -181,7 +181,7 @@ namespace Mahjong.Logic
                 var yakus = CountYaku(decompose, winningTile, handStatus, roundStatus, settings, isQTJ);
                 var fu = CountFu(decompose, winningTile, handStatus, roundStatus, yakus, settings);
                 if (yakus.Count == 0) continue;
-                var info = new PointInfo(fu, yakus, isQTJ, dora, uraDora, redDora, beiDora);
+                var info = new PointInfo(fu, yakus, isQTJ, settings.SuperBingo, dora, uraDora, redDora, beiDora);
                 infos.Add(info);
                 Debug.Log($"Decompose: {string.Join(", ", decompose)}, PointInfo: {info}");
             }

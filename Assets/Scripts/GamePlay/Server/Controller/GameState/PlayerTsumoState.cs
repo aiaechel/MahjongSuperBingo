@@ -34,7 +34,8 @@ namespace GamePlay.Server.Controller.GameState
                 Dora = TsumoPointInfo.Dora,
                 UraDora = TsumoPointInfo.UraDora,
                 RedDora = TsumoPointInfo.RedDora,
-                IsQTJ = TsumoPointInfo.IsQTJ
+                IsQTJ = TsumoPointInfo.IsQTJ,
+                IsSuperBingo = TsumoPointInfo.IsSuperBingo
             };
             var info = new EventMessages.TsumoInfo
             {

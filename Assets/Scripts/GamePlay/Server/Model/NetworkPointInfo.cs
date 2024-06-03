@@ -13,11 +13,12 @@ namespace GamePlay.Server.Model
         public int RedDora;
         public int BeiDora;
         public bool IsQTJ;
+        public bool IsSuperBingo;
 
         public override string ToString()
         {
             return $"Fu: {Fu}, YakuValues: {string.Join(",", YakuValues)}, "
-                + $"Dora: {Dora}, UraDora: {UraDora}, RedDora: {RedDora}, BeiDora: {BeiDora}, IsQTJ: {IsQTJ}";
+                + $"Dora: {Dora}, UraDora: {UraDora}, RedDora: {RedDora}, BeiDora: {BeiDora}, IsQTJ: {IsQTJ}, isSuperBingo: {IsSuperBingo}";
         }
     }
 }

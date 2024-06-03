@@ -14,18 +14,20 @@ namespace Mahjong.Model
         private YakuValue[] Yakus;
         public bool IsYakuman { get; }
         public bool IsQTJ { get; }
+        public bool IsSuperBingo { get; }
         public int Dora { get; }
         public int UraDora { get; }
         public int RedDora { get; }
         public int BeiDora { get; }
         public int Doras { get; }
 
-        public PointInfo(int fu, IList<YakuValue> yakuValues, bool 青天井, int dora, int uraDora, int redDora, int beiDora)
+        public PointInfo(int fu, IList<YakuValue> yakuValues, bool 青天井, bool isSuperBingo, int dora, int uraDora, int redDora, int beiDora)
         {
             Fu = fu;
             Yakus = yakuValues.ToArray();
             Fan = 0;
             IsQTJ = 青天井;
+            IsSuperBingo = isSuperBingo;
             Dora = dora;
             UraDora = uraDora;
             RedDora = redDora;
@@ -76,6 +78,13 @@ namespace Mahjong.Model
                 else if (TotalFan >= 8) BasePoint = MahjongConstants.Baiman;
                 else if (TotalFan >= 6) BasePoint = MahjongConstants.Haneman;
                 else if (TotalFan >= 5) BasePoint = MahjongConstants.Mangan;
+                else if (IsSuperBingo)
+                {
+                    if (TotalFan == 4) BasePoint = MahjongConstants.Mangan;
+                    else if (TotalFan == 3) BasePoint = 4000;
+                    else if (TotalFan == 2) BasePoint = 2000;
+                    else BasePoint = 1000;
+                }
                 else
                 {
                     int point = Fu * (int)Math.Pow(2, TotalFan + 2);
@@ -87,7 +96,7 @@ namespace Mahjong.Model
         }
 
         public PointInfo(NetworkPointInfo netInfo)
-            : this(netInfo.Fu, netInfo.YakuValues, netInfo.IsQTJ, netInfo.Dora, netInfo.UraDora, netInfo.RedDora, netInfo.BeiDora)
+            : this(netInfo.Fu, netInfo.YakuValues, netInfo.IsQTJ, netInfo.IsSuperBingo, netInfo.Dora, netInfo.UraDora, netInfo.RedDora, netInfo.BeiDora)
         {
         }
 
@@ -108,7 +117,7 @@ namespace Mahjong.Model
             var yakus = Yakus == null ? "" : string.Join(", ", Yakus.Select(yaku => yaku.ToString()));
             return
                 $"Fu = {Fu}, Fan = {Fan}, Dora = {Dora}, UraDora = {UraDora}, RedDora = {RedDora}, BeiDora = {BeiDora}, "
-                + $"Yakus = [{yakus}], BasePoint = {BasePoint}";
+                + $"Yakus = [{yakus}], BasePoint = {BasePoint}, isSuperBingo = {IsSuperBingo}";
         }
 
         public int CompareTo(PointInfo other)
