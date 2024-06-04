@@ -26,7 +26,9 @@ namespace GamePlay.Server.Controller.GameState
         public override void OnServerStateEnter()
         {
             PhotonNetwork.AddCallbackTarget(this);
-            int multiplier = gameSettings.GetMultiplier(CurrentRoundStatus.IsDealer(TsumoPlayerIndex), players.Count);
+            bool isDealer = CurrentRoundStatus.IsDealer(TsumoPlayerIndex);
+            int numPlayers = players.Count;
+            int multiplier = gameSettings.GetMultiplier(isDealer, numPlayers);
             var netInfo = new NetworkPointInfo
             {
                 Fu = TsumoPointInfo.Fu,
@@ -47,18 +49,20 @@ namespace GamePlay.Server.Controller.GameState
                 UraDoraIndicators = MahjongSet.UraDoraIndicators,
                 IsRichi = CurrentRoundStatus.RichiStatus(TsumoPlayerIndex),
                 TsumoPointInfo = netInfo,
-                TotalPoints = TsumoPointInfo.BasePoint * multiplier
+                TotalPoints = TsumoPointInfo.calculateTotalPoints(isDealer, true, numPlayers)
             };
             // send rpc calls
             ClientBehaviour.Instance.photonView.RPC("RpcTsumo", RpcTarget.AllBufferedViaServer, info);
             // get point transfers
             // todo -- tsumo loss related, now there is tsumo loss by default
+
             transfers = new List<PointTransfer>();
             for (int playerIndex = 0; playerIndex < players.Count; playerIndex++)
             {
                 if (playerIndex == TsumoPlayerIndex) continue;
-                int amount = TsumoPointInfo.BasePoint;
-                if (CurrentRoundStatus.IsDealer(playerIndex)) amount *= 2;
+                int amount = CurrentRoundStatus.IsDealer(playerIndex) 
+                    ? TsumoPointInfo.calculateTsumoDealerPayment(isDealer) 
+                    : TsumoPointInfo.calculateTsumoNonDealerPayment(isDealer);
                 int extraPoints = CurrentRoundStatus.ExtraPoints;
                 transfers.Add(new PointTransfer
                 {

@@ -41,7 +41,7 @@ namespace GamePlay.Server.Controller.GameState
             var multipliers = RongPlayerIndices.Select(
                 playerIndex => gameSettings.GetMultiplier(CurrentRoundStatus.IsDealer(playerIndex), players.Count)
             ).ToArray();
-            var totalPoints = RongPointInfos.Select((info, i) => info.BasePoint * multipliers[i]).ToArray();
+            var totalPoints = RongPointInfos.Select((info, playerIndex) => info.calculateTotalPoints(CurrentRoundStatus.IsDealer(playerIndex), false, players.Count)).ToArray();
             var netInfos = RongPointInfos.Select(info => new NetworkPointInfo
             {
                 Fu = info.Fu,

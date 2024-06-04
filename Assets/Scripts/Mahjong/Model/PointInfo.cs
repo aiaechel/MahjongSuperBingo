@@ -81,14 +81,13 @@ namespace Mahjong.Model
                 else if (IsSuperBingo)
                 {
                     if (TotalFan == 4) BasePoint = MahjongConstants.Mangan;
-                    else if (TotalFan == 3) BasePoint = 4000;
-                    else if (TotalFan == 2) BasePoint = 2000;
-                    else BasePoint = 1000;
+                    else if (TotalFan == 3) BasePoint = 1000;
+                    else if (TotalFan == 2) BasePoint = 500;
+                    else BasePoint = 300;
                 }
                 else
                 {
                     int point = Fu * (int)Math.Pow(2, TotalFan + 2);
-                    point = MahjongLogic.ToNextUnit(point, 100);
                     BasePoint = Math.Min(MahjongConstants.Mangan, point);
                 }
             }
@@ -127,6 +126,77 @@ namespace Mahjong.Model
             var fanComparison = TotalFan.CompareTo(other.TotalFan);
             if (fanComparison != 0) return fanComparison;
             return Fu.CompareTo(other.Fu);
+        }
+
+        public int calculateTotalPoints(bool isDealer, bool isTsumo, int numPlayers)
+        {
+            int totalMultiplier = getTotalMultiplier(isDealer);
+            if (IsSuperBingo && TotalFan < 5)
+            {
+                if (TotalFan == 4)
+                {
+                    return MahjongConstants.Mangan * totalMultiplier;
+                }
+                else if (TotalFan == 3)
+                {
+                    return 1000 * totalMultiplier;
+                }
+                else if (TotalFan == 2)
+                {
+                    return isDealer ? 3000 : 2000;
+                }
+                else
+                {
+                    return isDealer || isTsumo ? 2000 : 1000;
+                }
+            }
+            // Accounts for super bingo
+            if (isTsumo)
+            {
+                int dealerPayment = calculateTsumoDealerPayment(isDealer);
+                int nonDealerPayment = calculateTsumoNonDealerPayment(isDealer);
+                return isDealer ? nonDealerPayment * (numPlayers - 1) : dealerPayment + nonDealerPayment * (numPlayers - 2);
+            }
+            else return MahjongLogic.ToNextUnit(BasePoint * totalMultiplier, 100);
+            
+        }
+
+        public int calculateTsumoDealerPayment(bool isDealer)
+        {
+            if (IsSuperBingo)
+            {
+                if (TotalFan >= 13) return 20000;
+                else if (TotalFan >= 11) return 16000;
+                else if (TotalFan >= 8) return 10000;
+                else if (TotalFan >= 6) return 8000;
+                else if (TotalFan >= 4) return 5000;
+                else if (TotalFan == 3) return 3000;
+                else if (TotalFan == 2) return 1000;
+                else return 1000;
+            }
+            return MahjongLogic.ToNextUnit(BasePoint * 2, 100);
+        }
+
+        public int calculateTsumoNonDealerPayment(bool isDealer)
+        {
+            if (IsSuperBingo)
+            {
+                if (TotalFan >= 13) return isDealer ? 24000 : 12000;
+                else if (TotalFan >= 11) return isDealer ? 18000 : 8000;
+                else if (TotalFan >= 8) return isDealer ? 12000 : 6000;
+                else if (TotalFan >= 6) return isDealer ? 9000 : 4000;
+                else if (TotalFan >= 4) return isDealer ? 6000 : 3000;
+                else if (TotalFan == 3) return 1000;
+                else if (TotalFan == 2) return isDealer ? 2000 : 1000;
+                else return 1000;
+            }
+            return isDealer ? calculateTsumoDealerPayment(isDealer) : MahjongLogic.ToNextUnit(BasePoint, 100);
+        }
+
+        private int getTotalMultiplier(bool isDealer)
+        {
+            if (isDealer) return 6;
+            else return 4;
         }
     }
 }
