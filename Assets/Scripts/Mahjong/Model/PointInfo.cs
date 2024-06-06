@@ -67,8 +67,8 @@ namespace Mahjong.Model
             }
             else if (IsYakuman)
             {
-                BasePoint = Fan * MahjongConstants.Yakuman;
-                TotalFan = Fan;
+                BasePoint = MahjongConstants.Yakuman;
+                TotalFan = MahjongConstants.YakumanBaseFan;
             }
             else
             {
@@ -143,7 +143,9 @@ namespace Mahjong.Model
                 }
                 else if (TotalFan == 2)
                 {
-                    return isDealer ? 3000 : 2000;
+                    return isDealer 
+                        ? isTsumo ? 4000 : 3000 
+                        : 2000;
                 }
                 else
                 {
@@ -153,7 +155,7 @@ namespace Mahjong.Model
             // Accounts for super bingo
             if (isTsumo)
             {
-                int dealerPayment = calculateTsumoDealerPayment(isDealer);
+                int dealerPayment = isDealer ? calculateTsumoNonDealerPayment(isDealer) : calculateTsumoDealerPayment();
                 int nonDealerPayment = calculateTsumoNonDealerPayment(isDealer);
                 return isDealer ? nonDealerPayment * (numPlayers - 1) : dealerPayment + nonDealerPayment * (numPlayers - 2);
             }
@@ -161,7 +163,7 @@ namespace Mahjong.Model
             
         }
 
-        public int calculateTsumoDealerPayment(bool isDealer)
+        public int calculateTsumoDealerPayment()
         {
             if (IsSuperBingo)
             {
@@ -186,11 +188,11 @@ namespace Mahjong.Model
                 else if (TotalFan >= 8) return isDealer ? 12000 : 6000;
                 else if (TotalFan >= 6) return isDealer ? 9000 : 4000;
                 else if (TotalFan >= 4) return isDealer ? 6000 : 3000;
-                else if (TotalFan == 3) return 1000;
+                else if (TotalFan == 3) return isDealer ? 3000 : 1000;
                 else if (TotalFan == 2) return isDealer ? 2000 : 1000;
                 else return 1000;
             }
-            return isDealer ? calculateTsumoDealerPayment(isDealer) : MahjongLogic.ToNextUnit(BasePoint, 100);
+            return isDealer ? calculateTsumoDealerPayment() : MahjongLogic.ToNextUnit(BasePoint, 100);
         }
 
         private int getTotalMultiplier(bool isDealer)

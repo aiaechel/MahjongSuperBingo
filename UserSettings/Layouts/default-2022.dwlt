@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 2878
     height: 1541
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Console
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 321}
   m_MaxSize: {x: 10000, y: 10000}
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 536
     height: 1491
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -120,8 +120,8 @@ MonoBehaviour:
     y: 982
     width: 2342
     height: 509
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 12}
@@ -322,7 +322,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Prefabs/UI
+    - Assets/Tests/EditMode
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -330,16 +330,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Prefabs/UI
+  - Assets/Tests/EditMode
   m_LastFoldersGridSize: 16
   m_LastProjectPath: C:\Users\aiaec\Documents\workspace\MahjongSuperBingo
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 88}
-    m_SelectedIDs: d09e0000
-    m_LastClickedID: 40656
-    m_ExpandedIDs: 0000000050690000709e0000769e0000c69e0000ca9e0000cc9e000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 112}
+    m_SelectedIDs: 80c30100
+    m_LastClickedID: 115584
+    m_ExpandedIDs: 00000000e2730000e6730000e8730000f2c201000ac3010024c3010026c3010058c301006cc301006ec301007cc3010000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -367,7 +367,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000050690000
+    m_ExpandedIDs: 00000000e2730000e4730000e6730000e8730000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -392,8 +392,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 2a860100
-    m_LastClickedInstanceID: 99882
+    m_SelectedInstanceIDs: 
+    m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
@@ -509,9 +509,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: d6570000
-      m_LastClickedID: 22486
-      m_ExpandedIDs: 8cbcfeff40c9feffeceaffffc6f9ffffd0f9ffffd4f9ffffdcf9ffff00faffff06faffff28fbfffff45700005a58000068580000f2580000065900002659000064590000a0590000dc870000068c00001c8c0000248c0000548e00009c920000ce960000f2970000209d0000
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: ec2cffff382dffff905bffffea67ffff7481ffffa88bfffff68bffff4abaffffa0c6ffff26e0ffff28fbffff08d90000cc8801004a8b0100728e0100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -905,9 +905,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 1047.9777, y: 460.32404, z: 2.6748521}
+    m_Target: {x: 1040.0638, y: 475.86588, z: 2.4672453}
     speed: 2
-    m_Value: {x: 1047.9777, y: 460.32404, z: 2.6748521}
+    m_Value: {x: 1040.0638, y: 475.86588, z: 2.4672453}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -957,9 +957,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 567.8366
+    m_Target: 588.59735
     speed: 2
-    m_Value: 567.8366
+    m_Value: 588.59735
   m_Ortho:
     m_Target: 1
     speed: 2

@@ -61,7 +61,7 @@ namespace GamePlay.Server.Controller.GameState
             {
                 if (playerIndex == TsumoPlayerIndex) continue;
                 int amount = CurrentRoundStatus.IsDealer(playerIndex) 
-                    ? TsumoPointInfo.calculateTsumoDealerPayment(isDealer) 
+                    ? TsumoPointInfo.calculateTsumoDealerPayment() 
                     : TsumoPointInfo.calculateTsumoNonDealerPayment(isDealer);
                 int extraPoints = CurrentRoundStatus.ExtraPoints;
                 transfers.Add(new PointTransfer

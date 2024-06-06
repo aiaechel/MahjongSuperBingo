@@ -35,7 +35,7 @@ namespace Mahjong.Logic
             var pair = decompose.First(meld => meld.Type == MeldType.Pair);
             if (pair.Suit == Suit.Z)
             {
-                if (pair.First.Rank >= 5 && pair.First.Rank <= 7) fu += 2; // dragons
+                if (pair.First.Rank >= 5 && pair.First.Rank <= 7) fu += 2; // dragon
                 var selfWind = roundStatus.SelfWind;
                 var prevailingWind = roundStatus.PrevailingWind;
                 if (pair.First.EqualsIgnoreColor(selfWind)) fu += 2;
@@ -194,9 +194,7 @@ namespace Mahjong.Logic
 
         public static int GetTotalPoint(PointInfo pointInfo, RoundStatus roundStatus)
         {
-            return roundStatus.IsDealer
-                ? pointInfo.BasePoint * roundStatus.TotalPlayer * 2
-                : pointInfo.BasePoint * (roundStatus.TotalPlayer + 1);
+            return pointInfo.calculateTotalPoints(roundStatus.IsDealer, false, roundStatus.TotalPlayer);
         }
 
         private static ISet<List<Meld>> Decompose(IList<Tile> handTiles, IList<Meld> openMelds, Tile tile)
