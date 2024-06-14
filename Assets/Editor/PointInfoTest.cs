@@ -5,7 +5,7 @@ using UnityEngine;
 using Mahjong.Model;
 using Mahjong.Logic;
 
-public class PointInfoTest : MonoBehaviour
+public class PointInfoTest
 {
     [Test]
     public void TestRealYakumanHandScore()

@@ -4,7 +4,7 @@ using Mahjong.Model;
 using UnityEditor;
 using UnityEngine;
 
-public class MahjongLogicTest
+public class MahjongLogicTest2
 {
     [MenuItem("MahjongLogic/Test GuoshiWushuang")]
     public static void TestGuoshiWushuang()

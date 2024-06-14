@@ -7,6 +7,7 @@
 OldTexture/
 Assets/AssetStoreTools*
 *-release/
+DesktopBuild/
 
 # Visual Studio cache directory
 .vs/
@@ -34,6 +35,7 @@ ExportedObj/
 *.opendb
 *.log
 *.zip
+*.htm
 
 # Unity3D generated meta files
 *.pidb.meta

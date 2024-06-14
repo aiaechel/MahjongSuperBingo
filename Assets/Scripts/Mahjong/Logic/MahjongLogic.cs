@@ -20,17 +20,20 @@ namespace Mahjong.Logic
                     {typeof(List<Meld>), typeof(Tile), typeof(HandStatus), typeof(RoundStatus), typeof(GameSetting)}));
         }
 
-        public static int CountFu(List<Meld> decompose, Tile winningTile, HandStatus handStatus,
+        private static int CountFu(List<Meld> decompose, Tile winningTile, HandStatus handStatus,
             RoundStatus roundStatus, IList<YakuValue> yakus, GameSetting settings)
         {
             if (decompose.Count == 7) return 25; // 7 pairs
             if (decompose.Count == 13) return 30; // 13 orphans
             int fu = 20; // base fu
-            // Menqing and not tsumo
-            if (handStatus.HasFlag(HandStatus.Menqing) && !handStatus.HasFlag(HandStatus.Tsumo)) fu += 10;
+            // Menqing and not tsumo and not p
+            if (handStatus.HasFlag(HandStatus.Menqing) && !handStatus.HasFlag(HandStatus.Tsumo)) {
+                fu += 10;
+            }
             // Tsumo
-            if (handStatus.HasFlag(HandStatus.Tsumo) && !yakus.Any(yaku => yaku.Name == "平和" || yaku.Name == "岭上开花"))
+            if (handStatus.HasFlag(HandStatus.Tsumo) && !yakus.Any(yaku => yaku.Name == "平和" || yaku.Name == "岭上开花")) {
                 fu += 2;
+            }
             // pair
             var pair = decompose.First(meld => meld.Type == MeldType.Pair);
             if (pair.Suit == Suit.Z)
@@ -53,7 +56,7 @@ namespace Mahjong.Logic
             {
                 if (!meld.Tiles.Contains(winningTile)) continue;
                 if (meld.Type == MeldType.Pair) flag++;
-                if (meld.Type == MeldType.Sequence && !meld.Revealed && meld.IsTwoSideIgnoreColor(winningTile)) flag++;
+                if (meld.Type == MeldType.Sequence && !meld.Revealed && !meld.IsTwoSideIgnoreColor(winningTile)) flag++;
             }
 
             if (flag != 0) fu += 2;
@@ -180,6 +183,7 @@ namespace Mahjong.Logic
             {
                 var yakus = CountYaku(decompose, winningTile, handStatus, roundStatus, settings, isQTJ);
                 var fu = CountFu(decompose, winningTile, handStatus, roundStatus, yakus, settings);
+                Debug.Log($"Yakus: {string.Join(", ", yakus)}, Fu: {fu}");
                 if (yakus.Count == 0) continue;
                 var info = new PointInfo(fu, yakus, isQTJ, settings.SuperBingo, dora, uraDora, redDora, beiDora);
                 infos.Add(info);
@@ -190,11 +194,6 @@ namespace Mahjong.Logic
             infos.Sort();
             Debug.Log($"CountPoint: {string.Join(", ", infos.Select(info => info.ToString()))}");
             return infos[infos.Count - 1];
-        }
-
-        public static int GetTotalPoint(PointInfo pointInfo, RoundStatus roundStatus)
-        {
-            return pointInfo.calculateTotalPoints(roundStatus.IsDealer, false, roundStatus.TotalPlayer);
         }
 
         private static ISet<List<Meld>> Decompose(IList<Tile> handTiles, IList<Meld> openMelds, Tile tile)
@@ -217,11 +216,13 @@ namespace Mahjong.Logic
             return result;
         }
 
+        // Checks if hand is complete without calculating yaku
         public static bool HasWin(IList<Tile> handTiles, IList<Meld> openMelds, Tile tile)
         {
             return Decompose(handTiles, openMelds, tile).Count > 0;
         }
 
+        // Get tiles that would complete the hand without calculating Yaku
         public static IList<Tile> WinningTiles(IList<Tile> handTiles, IList<Meld> openMelds)
         {
             var list = new List<Tile>();
@@ -255,11 +256,12 @@ namespace Mahjong.Logic
             return result;
         }
 
-        public static bool IsReady(IList<Tile> handTiles, IList<Meld> openMelds)
+        private static bool IsReady(IList<Tile> handTiles, IList<Meld> openMelds)
         {
             return WinningTiles(handTiles, openMelds).Count > 0;
         }
 
+        // TODO: Move to the 1 usage
         public static bool Test9KindsOfOrphans(IList<Tile> handTiles, Tile lastDraw)
         {
             var set = new HashSet<Tile>(handTiles, Tile.TileIgnoreColorEqualityComparer);
@@ -422,6 +424,7 @@ namespace Mahjong.Logic
             }
         }
 
+        // TODO: Move to the one usage
         public static int[] CountTiles(IList<Meld> meldList)
         {
             var result = new int[MahjongConstants.TileKinds];
@@ -578,6 +581,7 @@ namespace Mahjong.Logic
             });
         }
 
+        // TODO: convert to private method
         public static IList<List<T>> Combination<T>(IList<T> list, int count)
         {
             var result = new List<List<T>>();
@@ -679,6 +683,7 @@ namespace Mahjong.Logic
             return string.Join("; ", strings);
         }
 
+        // TODO: Move to one usage
         public static bool TestDiscardZhenting(IList<Tile> handTiles, List<RiverTile> riverTiles)
         {
             var winningTiles = WinningTiles(handTiles, null);
@@ -695,7 +700,6 @@ namespace Mahjong.Logic
             if (allTiles == null) allTiles = MahjongConstants.FullTiles;
             if (!allTiles.Contains(doraIndicator, Tile.TileIgnoreColorEqualityComparer))
             {
-                Debug.LogError($"Full tile set does not contain tile {doraIndicator}, return itself");
                 return doraIndicator;
             }
             int repeat;

@@ -9,17 +9,17 @@ namespace Mahjong.Model
     public class GameSetting
     {
         // Basic settings
-        public GameMode GameMode; // Should be renamed for normal vs aotenjuu
-        public GamePlayers GamePlayers;
-        public RoundCount RoundCount;
-        public MinimumFanConstraintType MinimumFanConstraintType;
-        public PointsToGameEnd PointsToGameEnd;
+        public GameMode GameMode = GameMode.Normal; // Should be renamed for normal vs aotenjuu
+        public GamePlayers GamePlayers = GamePlayers.Four;
+        public RoundCount RoundCount = RoundCount.ES;
+        public MinimumFanConstraintType MinimumFanConstraintType = MinimumFanConstraintType.One;
+        public PointsToGameEnd PointsToGameEnd = PointsToGameEnd.Negative;
         public bool GameEndsWhenAllLastTop;
         public int InitialPoints;
         public int FirstPlacePoints;
         public bool AllowHint;
         // Advance settings
-        public InitialDoraCount InitialDoraCount;
+        public InitialDoraCount InitialDoraCount = InitialDoraCount.One;
         public bool AllowRichiWhenPointsLow;
         public bool AllowRichiWhenNotReady;
         public bool AllowDiscardSameAfterOpen;
